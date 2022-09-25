@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+
+
+    <!-- <link rel="stylesheet" href="./assets/css/reset.css"> -->
+    <link rel="stylesheet" href="./assets/css/styles.css">
+    <title>Document</title>
+
+    <style>
+        .navbar {
+            border-radius: 10px;
+        }
+
+        #homePageEl {
+            display: flex;
+        }
+
+        /* #searchForm {
+            display: none;
+        } */
+
+        #errorDiv {
+            font-size: 40px;
+            margin: auto;
+        }
+
+        .dataContainer {
+            display: flex;
+            border: 3px solid black;
+            padding: 10px;
+            margin-top: 20px;
+            border-radius: 10px;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            gap: 5px;
+        }
+    </style>
+
+
+</head>
+
+<body>
+
+    <div class="container-xl">
+
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+
+            <div class="container-fluid">
+
+                <a class="navbar-brand" href="#home">Piche li?</a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01"
+                    aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarColor01">
+
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="#home">Home</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="#favorites">Favorites</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="#login" id="loginNavLink">Login</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="#register" id="registerNavLink">Register</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" id="logoutNavLink">Logout</a>
+                        </li>
+
+                    </ul>
+
+                    <form class="d-flex" role="search" id="searchForm">
+
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"
+                            id="searchInputEl">
+                        <!-- <button class="btn btn-outline-light" type="submit" id="searchBtn">Search</button> -->
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </nav>
+
+
+        <!-- премахнал съм d-flex -->
+        <div class="container-xl flex-wrap align-items-center justify-content-around align-content-around"
+            id="homePage">
+
+
+        </div>
+
+
+        <!-- премахнал съм d-flex -->
+        <div class="container-xl flex-wrap align-items-center justify-content-around align-content-around"
+            id="favoritesPage">
+
+        </div>
+
+
+        <div class="container-xl flex-wrap align-items-center justify-content-center" id="detailsPage">
+
+        </div>
+
+
+        <div class="container-xl" id="loginPage">
+
+            <form id="loginForm" action="#">
+
+                <label for="loginUsername">Username:</label>
+                <input required type="text" name="username" id="loginUsername" placeholder="Username">
+
+                <label for="loginPassword">Password:</label>
+                <input required type="password" name="password" id="loginPassword" placeholder="Password">
+
+                <p class="error" id="loginError">Wrong credentials</p>
+
+                <button id="loginBtn" type="submit">Login</button>
+
+                <a href="#register">You don't have an account</a>
+
+            </form>
+
+        </div>
+
+
+        <div class="container-xl" id="registerPage">
+
+            <form id="registerForm" action="#">
+
+                <label for="regUsername">Username:</label>
+                <input required type="text" name="username" placeholder="Username" id="regUsername">
+
+                <label for="regPassword">Password:</label>
+                <input required type="password" name="regPassword" placeholder="Password" id="regPassword">
+
+                <label for="regRePassword">Repeat password</label>
+                <input required type="password" name="regRePassword" id="regRePassword" placeholder="Repeat password">
+
+                <p class="error" id="passMismatchError">Your passwords don't match</p>
+
+                <p class="error" id="userExistsError">Username is already taken</p>
+
+                <button type="submit" id="registerBtn" disabled>Register</button>
+
+                <a href="#login">Already have an account?</a>
+
+            </form>
+
+        </div>
+
+    </div>
+
+    <div class="container-xl d-flex align-items-center justify-content-center" id="errorPage">
+        <div id="errorDiv">Error 404!</div>
+
+    </div>
+
+
+
+
+
+
+
+
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+        crossorigin="anonymous"></script>
+
+    <script src="./assets/js/pageElements.js"></script>
+    <script src="./assets/js/users.js"></script>
+    <script src="./assets/js/utils/util.js"></script>
+
+    <script src="./assets/js/models/User.js"></script>
+    <script src="./assets/js/models/UserManager.js"></script>
+
+    <script src="./assets/js/models/CountriesManager.js"></script>
+
+    <script src="./assets/js/controllers/homeController.js"></script>
+    <script src="./assets/js/controllers/favoritesController.js"></script>
+    <script src="./assets/js/controllers/loginController.js"></script>
+    <script src="./assets/js/controllers/registerController.js"></script>
+    <script src="./assets/js/controllers/detailsController.js"></script>
+
+    <script src="./assets/js/Router.js"></script>
+
+    <script src="./assets/js/controllers/mainController.js"></script>
+
+
+</body>
+
+</html>
